@@ -1,32 +1,44 @@
 {
   "name": "happy-intersection-observer",
   "version": "0.0.1",
-  "description": "React component with an intersection observer, written in typescript.",
-  "main": "index.js",
+  "engines": {
+    "node": ">=8.10.0"
+  },
   "scripts": {
     "preinstall": "node -e 'if(!/yarn\\.js$/.test(process.env.npm_execpath))throw new Error(\"This project uses Yarn.\")'",
-    "start": "start-storybook"
+    "start": "start-storybook",
+    "format": "node_modules/.bin/prettier --config .prettierrc \"**/*.{js,jsx,ts,tsx,md}\" --write",
+    "format-test": "node_modules/.bin/prettier --config .prettierrc \"**/*.{js,jsx,ts,tsx,md}\" --check"
   },
-  "author": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "node_modules/.bin/lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,md}": [
+      "prettier --config .prettierrc -l"
+    ]
+  },
   "license": "ISC",
+  "author": "Mac Mlynarczyk",
+  "description": "React component with an intersection observer, written in typescript.",
+  "dependencies": {
+    "react": "16.10.2",
+    "react-dom": "16.10.2"
+  },
   "devDependencies": {
+    "@babel/core": "7.6.4",
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "@storybook/addon-info": "5.2.4",
     "@storybook/react": "5.2.4",
+    "babel-loader": "8.0.6",
     "husky": "3.0.9",
+    "lint-staged": "10.0.0-0",
+    "prettier": "1.18.2",
     "react-docgen-typescript-loader": "3.3.0",
     "typescript": "3.6.4"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "dependencies": {
-    "@babel/core": "7.6.4",
-    "babel-loader": "8.0.6",
-    "react": "16.10.2",
-    "react-dom": "16.10.2"
   }
 }
