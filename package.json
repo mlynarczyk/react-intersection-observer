@@ -31,6 +31,8 @@
   "author": "Mac Mlynarczyk",
   "description": "React component with an intersection observer, written in typescript.",
   "dependencies": {
+    "intersection-observer": "0.7.0",
+    "raf-throttle": "2.0.3",
     "react": "16.10.2",
     "react-dom": "16.10.2"
   },
@@ -41,8 +43,8 @@
     "@babel/preset-typescript": "7.6.0",
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
-    "@storybook/addon-info": "5.2.4",
-    "@storybook/react": "5.2.4",
+    "@storybook/addon-info": "5.2.5",
+    "@storybook/react": "5.2.5",
     "@testing-library/react": "9.3.0",
     "@types/jest": "24.0.20",
     "@typescript-eslint/eslint-plugin": "2.4.0",

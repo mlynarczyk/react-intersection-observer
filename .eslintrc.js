@@ -108,6 +108,7 @@ module.exports = {
     ],
 
     // unicorn
+    'unicorn/filename-case': 'off',
     'unicorn/catch-error-name': 'off',
     'unicorn/prefer-node-append': 'off', // ie11
     'unicorn/prefer-node-remove': 'off', // ie11
